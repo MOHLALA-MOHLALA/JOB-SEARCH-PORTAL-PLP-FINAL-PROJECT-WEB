@@ -84,3 +84,143 @@
     margin: 0;
     padding: 0;
   }
+
+  
+  .header-text {
+    font-size: 48px;
+    color: white;
+    text-shadow: 1px 1px black;
+  }
+  
+  
+  .logo {
+    
+    width: 89.9px;
+    height: 60px;
+    border-radius: 2px;
+    object-fit: cover;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    background-image: url('/images/Jobiconic.png');
+    background-size: contain;
+    height: 100ch;
+    margin: 5cm;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .header-text {
+    font-size: 48px;
+    color: white;
+    text-shadow: 1px 1px black;
+    margin-top: 20px;
+  }
+  
+  .search-bar {
+    width: 2cm;
+    padding: 30px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+
+/* Style the search field */
+form.search input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  
+  /* Style the search tton */
+  form.search button {
+    float: center;
+    width: 20%;
+    padding: 10px;
+    background: #969899;
+    color: rgb(17, 16, 16);
+    font-size: 17px;
+    border: radius ;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  
+  form.search button:hover {
+    background: #3a4853;
+  }
+  
+  /* Clear floats */
+  form.search::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .text-container {
+    display: flex;
+    justify-conter: ;
+    align-items: center;
+    width: 70%;
+    margin: 10px auto;
+  }
+  
+
+  .center-aligned {
+    text-align: center;
+    font-family: serif;
+    font-size: 10px;
+    color: rgb(82, 76, 76);
+  }
+  
+  .background-container {
+    background-color: #f7f5f5;
+    height: 50px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .text-on-top {
+    color: rgb(153, 113, 113);
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  .create-resume-button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  
+  .background-container {
+    background-color: #ccc;
+    height: 300px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+  }
