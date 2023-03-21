@@ -282,3 +282,59 @@ form.search input[type=text] {
   .footer-column a:hover {
     text-decoration: underline;
   }
+
+  table {
+    border-collapse:collapse;
+    position: left;
+    width: 40%;
+    margin: 20px auto;
+  }
+  
+  td {
+    border: rgb(92, 86, 86);
+    text-align: center;
+    padding: 1px;
+  }
+  .table-container{
+    position: left;
+  }
+  
+  .table-image {
+    width: 100px;
+    cursor: pointer;
+    position: left;
+  }
+  
+  .caption-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px black;
+  }
+  
+  .caption {
+    font-size: 24px;
+    text-align: left;
+  }
+  
+  .text-container {
+    display: flex;
+    justify-conter: ;
+    align-items: center;
+    width: 70%;
+    margin: 10px auto;
+  }
+  
+  
+  
+  .center-aligned {
+    text-align: center;
+    font-family: serif;
+    font-size: 10px;
+    color: rgb(82, 76, 76);
+  }
