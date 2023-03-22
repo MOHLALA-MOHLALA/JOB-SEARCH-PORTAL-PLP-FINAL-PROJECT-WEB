@@ -338,3 +338,12 @@ form.search input[type=text] {
     font-size: 10px;
     color: rgb(82, 76, 76);
   }
+
+  .form1{
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    position: center;
+    display: block;
+    margin: 2%;
+  } 
