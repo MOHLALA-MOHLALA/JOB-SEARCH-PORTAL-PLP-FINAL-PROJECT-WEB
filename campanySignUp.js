@@ -19,9 +19,9 @@ import {
   
     messagingSenderId: "58044242489",
   
-    appId: "1:58044242489:web:e31d24607235bbf70d8be8",
+    appId: "1:58044242489:web:999782036b64d2220d8be8",
   
-    measurementId: "G-QSH4GSJ4M3"
+    measurementId: "G-WGDGSDEQS4"
   
   };
   
@@ -38,6 +38,7 @@ const passwordInput = document.getElementById("password");
 const main = document.getElementById("main");
 const createacct = document.getElementById("create-acct");
 
+const campanyNameIn = document.getElementById("campany_name")
 const signupEmailIn = document.getElementById("email-signup");
 const confirmSignupEmailIn = document.getElementById("confirm-email-signup");
 const signupPasswordIn = document.getElementById("password-signup");
@@ -49,6 +50,7 @@ const createacctbtn = document.getElementById("create-acct-btn");
 const returnBtn = document.getElementById("return-btn");
 
 var email,
+  campanyName,
   password,
   signupEmail,
   signupPassword,
@@ -74,6 +76,7 @@ createacctbtn.addEventListener("click", function () {
 
   if (
     signupEmail == null ||
+   
     confirmSignupEmail == null ||
     signupPassword == null ||
     confirmSignUpPassword == null
