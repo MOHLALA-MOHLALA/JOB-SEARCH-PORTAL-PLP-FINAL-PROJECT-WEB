@@ -34,15 +34,16 @@ h1 {
   }
   
   .login-container {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     padding: 7%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     width: 40vw;
     margin: auto;
-    height: 70vh;
+    height: 85vh;
     margin-top: 15vh;
   }
-  
+
+
   #submit, #create-acct-btn {
     background-color: #555253;
     color: white;
