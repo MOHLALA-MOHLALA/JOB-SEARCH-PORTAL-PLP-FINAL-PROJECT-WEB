@@ -15,7 +15,6 @@ This is a web application for job seekers and employers to connect with each oth
  To run this project locally, you'll need to follow these steps:
 
     Clone this repository to your local machine.
-    Install the necessary dependencies by running npm install.
     Start the server by running npm start.
     Open your web browser and go to http://localhost:3000.
 
@@ -33,14 +32,15 @@ This is a web application for job seekers and employers to connect with each oth
  Here are some features that i plan to add in the future:
 
     User authentication: Allow users to create accounts and sign in more securely in a stable database.
+    Resume creation: Allow job seekers to create their resumes easily  online.
+    Skill assessments: Allow job seekers to take skill assessments to help employers evaluate their skills.
     Messaging: Allow employers and job seekers to communicate with each other directly through the website.
     Job recommendations: Use machine learning algorithms to recommend jobs to job seekers based on their profiles and job search history.
 
-Contributor
-
-MOHLALA TSHEGOFATSO
-+27 64 917 5087
-tm.senokane@gmail.com
+Contributor::
+   MOHLALA TSHEGOFATSO
+   +27 64 917 5087
+   tm.senokane@gmail.com
 
 
 ---This project serves as a final project for PLP(power-learn-project ) in web development---
