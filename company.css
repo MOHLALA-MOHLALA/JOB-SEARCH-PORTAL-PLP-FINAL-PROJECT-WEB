@@ -1,0 +1,48 @@
+.dashboard {
+    
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .dashboard ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dashboard ul li {
+    padding: 10px;
+    background-color: #615c5c;
+    cursor: pointer;
+  }
+  
+  .dashboard ul li.active {
+    background-color: #c4c0c0;
+  }
+  
+  .dashboard-content {
+    
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  
+  .dashboard-tab {
+    display: none;
+    width: 100%;
+  }
+  
+  .dashboard-tab.active {
+    display: flex;
+  }
+
+  .form1{
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    position: center;
+    display: block;
+    margin: 2%;
+  } 
