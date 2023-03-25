@@ -65,3 +65,43 @@
     height: 60px;
     margin-right: 10px;
   }
+/*sdfghjkjhgfdsasdfghgfd*/
+
+#user-profile {
+  border: 1px solid black;
+  padding: 20px;
+}
+
+#user-profile h2 {
+  margin-top: 0;
+}
+
+#user-profile button {
+  margin-top: 20px;
+}
+
+#edit-profile-form {
+  border: 1px solid black;
+  padding: 20px;
+}
+
+#edit-profile-form h2 {
+  margin-top: 0;
+}
+
+#edit-profile-form input, #edit-profile-form textarea {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#edit-profile-form img {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+#profile-image {
+  width: 5cm; /* set the width of the image to 100 pixels */
+  height: 5cm; /* set the height of the image to 100 pixels */
+  object-fit: cover; /* crop the image to fill the container and maintain aspect ratio */
+  border-radius: 50%; /* make the image circular */
+}

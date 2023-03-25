@@ -24,20 +24,98 @@
             <li><img src="/images/posts.png"> POSTS</li>
           </ul>
         <div class="dashboard-content">
-          <!-- Job Listings -->
+          <!-- profile -->
           <div class="dashboard-tab active">
-            <!-- Job Listing Cards -->
+            <!-- [profile] Cards -->
             <div class="form1">
-                <h1>ohbhjvgcvg</h1>
-            <h2>hvdfghjkjhgfdfgh </h2>
+                <div id="user-profile">
+                    <h2>Job-Seeker User Profile</h2>
+                    <div id="profile-details">
+                      <h3>Job Details</h3>
+                      <p>Job Title: <span id="job-title"></span></p>
+                      <p>Job Description: <span id="job-description"></span></p>
+                    </div>
+                    <div id="personal-details">
+                      <h3>Personal Details</h3>
+                      <p>Name: <span id="name"></span></p>
+                      <p>Email: <span id="email"></span></p>
+                      <p>Phone: <span id="phone"></span></p>
+                      <p>Address: <span id="address"></span></p>
+                    </div>
+                    <div id="experience-skills">
+                      <h3>Experience/Skills</h3>
+                      <p>Experience: <span id="experience"></span></p>
+                      <p>Skills: <span id="skills"></span></p>
+                    </div>
+                    <div id="resume-upload">
+                      <h3>Resume Upload</h3>
+                      <input type="file" id="resume-file">
+                    </div>
+                    <div id="profile-picture">
+                      <h3>Profile Picture</h3>
+                      <img id="profile-image" src="">
+                      <input type="file" id="profile-image-file">
+                    </div>
+                    <div id="social-media">
+                      <h3>Social Media Links</h3>
+                      <p>LinkedIn: <span id="linkedin"></span></p>
+                      <p>Twitter: <span id="twitter"></span></p>
+                      <p>Facebook: <span id="facebook"></span></p>
+                    </div>
+                    <button id="edit-profile">Edit Profile</button>
+                  </div>
+                  
+                  <div id="edit-profile-form" style="display: none;">
+                    <h2>Edit Profile</h2>
+                    <form id="edit-form">
+                      <h3>Job Details</h3>
+                      <label for="job-title-input">Job Title:</label>
+                      <input type="text" id="job-title-input"><br>
+                      <label for="job-description-input">Job Description:</label>
+                      <textarea id="job-description-input"></textarea><br>
+                      <h3>Personal Details</h3>
+                      <label for="name-input">Name:</label>
+                      <input type="text" id="name-input"><br>
+                      <label for="email-input">Email:</label>
+                      <input type="email" id="email-input"><br>
+                      <label for="phone-input">Phone:</label>
+                      <input type="tel" id="phone-input"><br>
+                      <label for="address-input">Address:</label>
+                      <textarea id="address-input"></textarea><br>
+                      <h3>Experience/Skills</h3>
+                      <label for="experience-input">Experience:</label>
+                      <textarea id="experience-input"></textarea><br>
+                      <label for="skills-input">Skills:</label>
+                      <textarea id="skills-input"></textarea><br>
+                      <h3>Resume Upload</h3>
+                      <input type="file" id="resume-file-input"><br>
+                      <h3>Profile Picture</h3>
+                      <img id="profile-image-input-preview" src="">
+                      <input type="file" id="profile-image-file-input"><br>
+                      <h3>Social Media Links</h3>
+                      <label for="linkedin-input">LinkedIn:</label>
+                      <input type="text" id="linkedin-input"><br>
+                      <label for="twitter-input">Twitter:</label>
+                      <input type="text" id="twitter-input"><br>
+                      <label for="facebook-input">Facebook:</label>
+                      <input type="text" id="facebook-input"><br>
+                      <button type="submit">Save Changes</button>
+                      <button type="button" id="cancel-edit">Cancel</button>
+                    </form>
+                  </div>
+                                    
+            </div> 
             </div>
           </div>
           <!-- Applications -->
           <div class="dashboard-tab">
             <!-- Application Cards -->
             <div class="form1">
-                <h1>FDFGVFH</h1>
-            <h2>okokjoikij v</h2>
+                <h1>bvisdfnvh </h1>
+                                    
+            </div>
+          </div>
+                  
             </div>
 
           </div>
