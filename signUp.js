@@ -6,7 +6,7 @@ import {
     signInWithEmailAndPassword,
   } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
   // import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-analytics.js";
-
+// firebase key
   const firebaseConfig = {
 
     apiKey: "AIzaSyCaMBLooSI9RN_pjcuwM9nFANlyGfEk1wQ",
@@ -57,21 +57,21 @@ var email,
 
 createacctbtn.addEventListener("click", function () {
   var isVerified = true;
-
+//emails verification
   signupEmail = signupEmailIn.value;
   confirmSignupEmail = confirmSignupEmailIn.value;
   if (signupEmail != confirmSignupEmail) {
-    window.alert("Email fields do not match. Try again.");
+    window.alert("Email fields do not match. Try again.");// pop alert if emails are not the same
     isVerified = false;
   }
-
+//password verification
   signupPassword = signupPasswordIn.value;
   confirmSignUpPassword = confirmSignUpPasswordIn.value;
   if (signupPassword != confirmSignUpPassword) {
-    window.alert("Password fields do not match. Try again.");
+    window.alert("Password fields do not match. Try again.");// pop alert if passwords are not the same
     isVerified = false;
   }
-
+//veifiying if all feilds are filled
   if (
     signupEmail == null ||
     confirmSignupEmail == null ||
@@ -89,14 +89,14 @@ createacctbtn.addEventListener("click", function () {
         // const user = userCredential.user;
         // ...
         window.alert("Success! Account created.");
-        window.location = "./jobSeeker.html";
+        window.location = "./jobSeeker.html";//next page if all verified and acc created
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         // ..
         window.alert("Error occurred. Try again.");
-        window.alert(errorMessage);
+        window.alert(errorMessage);// pop alert
       });
   }
 });
@@ -113,7 +113,7 @@ submitButton.addEventListener("click", function () {
       const user = userCredential.user;
 
       window.alert("Success! Welcome back!");
-      window.location = "./jobSeeker.html";
+      window.location = "./jobSeeker.html";//next page if loged in succesfully
 
       // ...
     })

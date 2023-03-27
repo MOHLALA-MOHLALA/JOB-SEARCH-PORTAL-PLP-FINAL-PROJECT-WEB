@@ -27,7 +27,7 @@ This is a web application for job seekers and employers to connect with each oth
     Job postings: Employers can create job postings with information about the job requirements, salary, location, and other details.
     Candidate search: Employers can search for candidates based on their skills, education, work experience, and other criteria.
 
- <h2> Future Development <h2>
+ <h2> Future Development </h2>
 
  Here are some features that i plan to add in the future:
 
@@ -37,10 +37,10 @@ This is a web application for job seekers and employers to connect with each oth
     Messaging: Allow employers and job seekers to communicate with each other directly through the website.
     Job recommendations: Use machine learning algorithms to recommend jobs to job seekers based on their profiles and job search history.
 
-Contributor::
+ <h2>  Contributor:: </h2>
    MOHLALA TSHEGOFATSO
    +27 64 917 5087
    tm.senokane@gmail.com
 
 
----This project serves as a final project for PLP(power-learn-project ) in web development---
+<h3>---This project serves as a final project for PLP(power-learn-project ) in web development---</h3>

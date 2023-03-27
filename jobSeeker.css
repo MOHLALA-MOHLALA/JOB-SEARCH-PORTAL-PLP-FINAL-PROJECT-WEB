@@ -1,6 +1,6 @@
 .dashboard {
     
-    display: flex;
+    display: flex;/* crop the dashboard content to fill the container and maintain aspect ratio */
     flex-direction: row;
   }
   
@@ -8,30 +8,30 @@
     display: flex;
     flex-direction: column;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin: 0;/* Add some space between the menu and page content */
+    padding: 0;/* Add some space between the menu and page content */
   }
   
   .dashboard ul li {
     padding: 10px;
-    background-color: #615c5c;
+    background-color: #615c5c;/* Sets background color */
     cursor: pointer;
   }
   
   .dashboard ul li.active {
-    background-color: #c4c0c0;
+    background-color: #c4c0c0;/* Sets background color */
   }
   
   .dashboard-content {
     
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 100%;/* Set the height of the image */
   }
   
   .dashboard-tab {
     display: none;
-    width: 100%;
+    width: 100%;/* Set the height of the image */
   }
   
   .dashboard-tab.active {
@@ -39,9 +39,9 @@
   }
 
   .form1{
-    background-color: #f2f2f2;
+    background-color: #f2f2f2;/* Sets background color */
     padding: 20px;
-    text-align: center;
+    text-align: center;/* aligning text to center */
     position: center;
     display: block;
     margin: 2%;
@@ -55,34 +55,34 @@
 
   .dashimage img,
  .dashimage h1 {
-  display: inline-block;
+  display: inline-block;/* Display the image as an inline-block element */
   vertical-align: middle;
 }
 
 
   .dashboard li img {
-    width: 60px;
-    height: 60px;
+    width: 60px;/* Set the width of the image */
+    height: 60px;/* Set the height of the image */
     margin-right: 10px;
   }
-/*sdfghjkjhgfdsasdfghgfd*/
+
 
 #user-profile {
   border: 1px solid black;
-  padding: 20px;
+  padding: 20px;/* Add some space between the contents */
 }
 
 #user-profile h2 {
-  margin-top: 0;
+  margin-top: 0; /* Add some space between contents */
 }
 
 #user-profile button {
-  margin-top: 20px;
+  margin-top: 20px;/* Add some space between contents */
 }
 
 #edit-profile-form {
   border: 1px solid black;
-  padding: 20px;
+  padding: 20px;/* Add some space between the image and the text */
 }
 
 #edit-profile-form h2 {
