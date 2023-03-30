@@ -108,3 +108,34 @@ document.getElementById('user-profile').style.display = 'block';
 }); 
 
 
+// initialize Firebase app
+var firebaseConfig = {
+  // insert your Firebase config here
+};
+firebase.initializeApp(firebaseConfig);
+
+// get reference to jobs collection in Firebase
+var jobsRef = firebase.firestore().collection("jobs");
+
+// listen for real-time updates to jobs data
+jobsRef.onSnapshot(function(snapshot) {
+  // clear existing table rows
+  var tbody = document.querySelector("#jobs-table tbody");
+  tbody.innerHTML = "";
+  
+  // iterate over job data and add rows to table
+  snapshot.forEach(function(doc) {
+    var job = doc.data();
+    
+    var row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${job.title}</td>
+      <td>${job.department}</td>
+      <td>${job.type}</td>
+      <td>${job.dateApplied.toDate().toLocaleDateString()}</td>
+      <td>${job.status}</td>
+    `;
+    
+    tbody.appendChild(row);
+  });
+});
