@@ -1,3 +1,4 @@
+
 const tabs = document.querySelectorAll('.dashboard ul li');
 const tabContents = document.querySelectorAll('.dashboard-tab');
 
@@ -138,4 +139,35 @@ jobsRef.onSnapshot(function(snapshot) {
     
     tbody.appendChild(row);
   });
+});
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Get a reference to the Firestore database
+const db = firebase.firestore();
+
+// Get a reference to the table body
+const tableBody = document.querySelector('#job-posts tbody');
+
+// Retrieve job posts from Firebase and display them in the table
+db.collection('job-posts').get().then(snapshot => {
+	snapshot.forEach(doc => {
+		const data = doc.data();
+		const row = document.createElement('tr');
+
+		row.innerHTML = `
+			<td>${data.jobTitle}</td>
+			<td>${data.department}</td>
+			<td>${data.position}</td>
+			<td>${data.jobDescription}</td>
+			<td>${data.jobType}</td>
+			<td>${data.datePosted}</td>
+			<td>${data.companyName}</td>
+			<td>${data.companyContact}</td>
+			<td>${data.location}</td>
+		`;
+
+		tableBody.appendChild(row);
+	});
 });

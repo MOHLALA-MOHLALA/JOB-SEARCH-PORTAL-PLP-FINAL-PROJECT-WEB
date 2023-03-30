@@ -303,7 +303,39 @@
           <div class="dashboard-tab">
             <!-- post Form  details-->
             <div class="form1">
-                <h1> post check</h1>
+                <div>
+                  <body>
+                    <h1>Posted Jobs</h1>
+                    <table id="job-posts">
+                      <thead>
+                        <tr>
+                          <th>Job Title</th>
+                          <th>Department</th>
+                          <th>Position</th>
+                          <th>Job Description</th>
+                          <th>Job Type</th>
+                          <th>Date Posted</th>
+                          <th>Company Name</th>
+                          <th>Contact Info</th>
+                          <th>Location</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <!-- Job post information will be displayed here -->
+                      </tbody>
+                    </table>
+                  
+                    <!-- Firebase configuration script -->
+                    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
+                    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js"></script>
+                    <script>
+                      // Firebase configuration object goes here
+                    </script>
+                  
+                    <!-- JavaScript file -->
+                    <script src="jobSeeker.js"></script>
+                  </body>
+                </div>
             </div>
 
           </div>
