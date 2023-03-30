@@ -105,3 +105,24 @@
   object-fit: cover; /* crop the image to fill the container and maintain aspect ratio */
   border-radius: 50%; /* make the image circular */
 }
+
+.applicant-form {
+  text-align: center;
+  }
+  
+  .new-application-button {
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  border: none;
+  background-color: #929292;
+  color: white;
+  cursor: pointer;
+  }
+  
+  .application-form {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 2rem;
+  border: 2px solid #6a6a6b;
+  }

@@ -106,3 +106,5 @@ document.getElementById('edit-profile-form').style.display = 'none';
 document.getElementById('user-profile').style.display = 'block';
 });
 }); 
+
+

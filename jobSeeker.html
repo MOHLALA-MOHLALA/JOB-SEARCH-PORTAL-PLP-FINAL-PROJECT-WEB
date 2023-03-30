@@ -118,23 +118,159 @@
           <div class="dashboard-tab">
             <!-- Application Cards / content -->
             <div class="form1">
-                <h1>bvisdfnvh </h1>                  
+              <div class="form1">
+                <div class="applicant-form">
+                <button class="new-application-button">New Application</button>
+                <form class="application-form" style="display: visible;">
+                <h2>Personal Information</h2>
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="full-name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <h2>Education Information</h2>
+                <label for="school-name">School Name:</label>
+                <input type="text" id="school-name" name="school-name" required>
+                
+                <label for="degree">Degree:</label>
+                <input type="text" id="degree" name="degree" required>
+                
+                <label for="major">Major:</label>
+                <input type="text" id="major" name="major" required>
+                
+                <h2>JOB INFORMATION</h2>
+                <label for="job-title">Job Title:</label>
+                <input type="text" id="job-title" name="job-title" required>
+                
+                <label for="department">Department:</label>
+                <input type="text" id="employer" name="employer" required>
+                
+                <label for="job-description">Job Description:</label>
+                <textarea id="job-description" name="job-description" required></textarea>
+
+                <label for="job-experience">Experience:</label>
+                <textarea id="job-experience" name="job-experience" required></textarea>
+                  <br>
+                <label for="job-type">Job type:</label>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                  <label class="custom-control-label" for="customRadio1">Free-lance</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                  <label class="custom-control-label" for="customRadio2">Full-time</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                  <label class="custom-control-label" for="customRadio1">Internship</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                  <label class="custom-control-label" for="customRadio2">Part-time</label>
+                </div>
+                
+                <h2>REFERENCE</h2>
+                <label for="reference-name">Name:</label>
+                <input type="text" id="reference-name" name="reference-name" required>
+                <label for="reference-name">Title :</label>
+                <input type="text" id="reference-name" name="reference-name" required>
+                <label for="reference-company"> Company Name:</label>
+                <input type="text" id="reference-company-name" name="reference-company-name" required><br>
+                <label for="reference-phone">Phone:</label>
+                <input type="text" id="reference-phone" name="reference-phone" required>
+              <h2>RESIDENCE</h2>
+              <div >
+                <form>
+                  <div class="form-col">
+                    <div class="form-group col-md-6">
+                      <label for="inputEmail4">Email</label>
+                      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputPassword4">Password</label>
+                      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputAddress">Address</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputAddress2">Address 2</label>
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputCity">City</label>
+                      <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputState">State</label>
+                      <select id="inputState" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                      <label for="inputZip">Zip</label>
+                      <input type="text" class="form-control" id="inputZip">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="gridCheck">
+                      <label class="form-check-label" for="gridCheck">
+                        Check me out
+                      </label>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Sign in</button>
+                
+               </div><br><br>
+                <div>
+                  <h2> Acknowledge and Authorization</h2>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                    <label class="custom-control-label" for="customCheck1">I certify that all the answers given are true 
+                      complete to the best to my knowledge
+                    </label><br>
+                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                    <label class="custom-control-label" for="customCheck1">I authorize investigation of all statements
+                       contained in this application-for-Employment as may be necessary in arriving at an Employer decision
+                    </label><br>
+                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                    <label class="custom-control-label" for="customCheck1">In the event of employment , i understand  that false  or misleading
+                       Information given in my application or interview may result in discharge
+                    </label>
+                  </div>
+                </div>
+                
+              </form>
+                </div>
+                
+                </div>                 
             </div>
           </div>
           <!-- status -->
           <div class="dashboard-tab">
             <!-- status details  form -->
              <div class="form1">
-                <h1>FDSBBIFDIB  </h1>
-             <h2>yujgujfhgj</h2>
+              <div>
+
+              <h1> status check</h1>
+                
+              </div>
             </div>
           </div>
           <!-- post tab-->
           <div class="dashboard-tab">
             <!-- post Form  details-->
             <div class="form1">
-                <h1>HFDJVBHFDB  </h1>
-             <h2>knfjnfdjnf</h2>
+                <h1> post check</h1>
             </div>
 
           </div>
