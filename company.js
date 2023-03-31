@@ -127,3 +127,95 @@ database.ref("job-applications").on("value", function(snapshot) {
     row.insertCell(6).innerHTML = childData.dateApplied;
   });
 });
+
+
+
+
+// Initialize Firebase
+var firebaseConfig = {
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+};
+firebase.initializeApp(firebaseConfig);
+
+// Get a reference to the database service
+var database = firebase.database();
+
+// Save data to Firebase
+function saveData() {
+  // Get values from input fields
+  var companyName = document.getElementById('name').value;
+  var companyEmail = document.getElementById('email').value;
+  var companyPhone = document.getElementById('phone').value;
+  var companyAddress = document.getElementById('address').value;
+  var parentCompany = document.getElementById('parent').value;
+  var organizationType = document.getElementById('organization').value;
+  var businessType = document.getElementById('business').value;
+  var inHouseLanguage = document.getElementById('language').value;
+  var companyActivities = document.getElementById('activities-input').value;
+  var companySubsidiaries = document.getElementById('subsidiaries-input').value;
+  var companyAddress1 = document.getElementById('inputAddress').value;
+  var companyAddress2 = document.getElementById('inputAddress2').value;
+  var companyCity = document.getElementById('inputCity').value;
+  var companyState = document.getElementById('inputState').value;
+  var companyZip = document.getElementById('inputZip').value;
+  var companyWebsite = document.getElementById('website-input').value;
+  var companyLinkedIn = document.getElementById('linkedin-input').value;
+  var companyTwitter = document.getElementById('twitter-input').value;
+  var companyFacebook = document.getElementById('facebook-input').value;
+
+  // Save data to Firebase database
+  database.ref('companies').push({
+    name: companyName,
+    email: companyEmail,
+    phone: companyPhone,
+    address: companyAddress,
+    parent: parentCompany,
+    organization: organizationType,
+    business: businessType,
+    language: inHouseLanguage,
+    activities: companyActivities,
+    subsidiaries: companySubsidiaries,
+    address1: companyAddress1,
+    address2: companyAddress2,
+    city: companyCity,
+    state: companyState,
+    zip: companyZip,
+    website: companyWebsite,
+    linkedin: companyLinkedIn,
+    twitter: companyTwitter,
+    facebook: companyFacebook
+  });
+
+  // Clear input fields
+  document.getElementById('name').value = '';
+  document.getElementById('email').value = '';
+  document.getElementById('phone').value = '';
+  document.getElementById('address').value = '';
+  document.getElementById('parent').value = '';
+  document.getElementById('organization').value = '';
+  document.getElementById('business').value = '';
+  document.getElementById('language').value = '';
+  document.getElementById('activities-input').value = '';
+  document.getElementById('subsidiaries-input').value = '';
+  document.getElementById('inputAddress').value = '';
+  document.getElementById('inputAddress2').value = '';
+  document.getElementById('inputCity').value = '';
+  document.getElementById('inputState').value = '';
+  document.getElementById('inputZip').value = '';
+  document.getElementById('website-input').value = '';
+  document.getElementById('linkedin-input').value = '';
+  document.getElementById('twitter-input').value = '';
+  document.getElementById('facebook-input').value = '';
+}
+
+// Event listener for form submission
+document.getElementById('company-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  saveData();
+  alert('Company data saved!');
+});
