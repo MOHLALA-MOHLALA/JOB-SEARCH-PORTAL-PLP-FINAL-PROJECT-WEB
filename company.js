@@ -18,6 +18,83 @@ tabs.forEach((tab, index) => {
   });
 });
 
+
+
+// Initialize Firebase
+var firebaseConfig = {
+  // Your Firebase project configuration
+
+  apiKey: "AIzaSyCaMBLooSI9RN_pjcuwM9nFANlyGfEk1wQ",
+
+  authDomain: "job-search-portal-4ebc8.firebaseapp.com",
+
+  databaseURL: "https://job-search-portal-4ebc8-default-rtdb.firebaseio.com",
+
+  projectId: "job-search-portal-4ebc8",
+
+  storageBucket: "job-search-portal-4ebc8.appspot.com",
+
+  messagingSenderId: "58044242489",
+
+  appId: "1:58044242489:web:144bc8be6fa847160d8be8",
+
+  measurementId: "G-06KHXF5DGD"
+
+};
+firebase.initializeApp(firebaseConfig);
+
+// Get a reference to the Firebase Realtime Database
+var database = firebase.database();
+
+// Get a reference to the application data node in the database
+var applicationRef = database.ref("application");
+
+// Listen for changes to the application data node
+applicationRef.on("value", function(snapshot) {
+  // Get the data from the snapshot
+  var applicationData = snapshot.val();
+
+  // Display the data in the application-data div
+  var applicationDataDiv = document.getElementById("application-data");
+  applicationDataDiv.innerHTML = JSON.stringify(applicationData);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 const firebaseConfig = {
 
   apiKey: "AIzaSyCaMBLooSI9RN_pjcuwM9nFANlyGfEk1wQ",
