@@ -1,118 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="jobSeeker.css">
-        <script src="jobSeeker.js" defer></script>
-    
-</head>
-<body>
- <div class="form1">
-      <div class = "dashimage" >  <!--DASHBOARD-->
+    <meta name="viewport" content="width=
+					<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="jobSeeker.css">
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
+    <script src="jobSeeker.js" defer></script>
+  </head>
+  <body>
+    <div class="form1">
+      <div class="dashimage">
+        <!--DASHBOARD-->
         <img src="/images/dashboard.png" alt="Image description">
         <h1 sytle="inline"> WELCOME !!</h1>
         <hr color="grey">
       </div>
-     <div class="dashboard"> <!-- dashboard menu with pictures-->
+      <div class="dashboard">
+        <!-- dashboard menu with pictures-->
         <ul>
-            <li class="active"><img src="/images/profilepic.png"> PROFILE</li>
-            <li><img src="/images/apply.png"> APPLY</li>
-            <li><img src="/images/status.png"> STATUS</li>
-            <li><img src="/images/posts.png"> POSTS</li>
-          </ul>
+          <li class="active">
+            <img src="/images/profilepic.png"> PROFILE
+          </li>
+          <li>
+            <img src="/images/apply.png"> APPLY
+          </li>
+          <li>
+            <img src="/images/status.png"> STATUS
+          </li>
+          <li>
+            <img src="/images/posts.png"> POSTS
+          </li>
+        </ul>
         <div class="dashboard-content">
           <!-- profile -->
           <div class="dashboard-tab active">
             <!-- [ user profile] card / info -->
             <div class="form1">
-                <div id="user-profile">
-                    <!-- displaying user profile-->
-                    <h2>Job-Seeker User Profile</h2>
-                     <!-- job details of user-->
-                    <div id="profile-details">
-                      <h3>Job Details</h3>
-                      <p>Job Title: <span id="job-title"></span></p>
-                      <p>Job Description: <span id="job-description"></span></p>
-                    </div>
-                     <!--personal details of user-->
-                    <div id="personal-details">
-                      <h3>Personal Details</h3>
-                      <p>Name: <span id="name"></span></p>
-                      <p>Email: <span id="email"></span></p>
-                      <p>Phone: <span id="phone"></span></p>
-                      <p>Address: <span id="address"></span></p>
-                    </div>
-                     <!--displaying experience datails-->
-                    <div id="experience-skills">
-                      <h3>Experience/Skills</h3>
-                      <p>Experience: <span id="experience"></span></p>
-                      <p>Skills: <span id="skills"></span></p>
-                    </div>
-                     <!-- uploading resume file--> 
-                    <div id="resume-upload">
-                      <h3>Resume Upload</h3>
-                      <input type="file" id="resume-file">
-                    </div>
-                     <!--uploading profile picture-->
-                    <div id="profile-picture">
-                      <h3>Profile Picture</h3>
-                      <img id="profile-image" src="">
-                      <input type="file" id="profile-image-file">
-                    </div>
-                     <!--showing social-media info of user-->
-                    <div id="social-media">
-                      <h3>Social Media Links</h3>
-                      <p>LinkedIn: <span id="linkedin"></span></p>
-                      <p>Twitter: <span id="twitter"></span></p>
-                      <p>Facebook: <span id="facebook"></span></p>
-                    </div>
-                     <!-- button which  display form for editing user info  when clicked -->
-                    <button id="edit-profile">Edit Profile</button>
-                  </div>
-                   <!--form that lets user enter new info  in oder to edits the saved user profile -->
-                    <div id="edit-profile-form" style="display: none;">
-                    <h2>Edit Profile</h2>
-                    <form id="edit-form">
-                      <h3>Job Details</h3>
-                      <label for="job-title-input">Job Title:</label>
-                      <input type="text" id="job-title-input"><br>
-                      <label for="job-description-input">Job Description:</label>
-                      <textarea id="job-description-input"></textarea><br>
-                      <h3>Personal Details</h3>
-                      <label for="name-input">Name:</label>
-                      <input type="text" id="name-input"><br>
-                      <label for="email-input">Email:</label>
-                      <input type="email" id="email-input"><br>
-                      <label for="phone-input">Phone:</label>
-                      <input type="tel" id="phone-input"><br>
-                      <label for="address-input">Address:</label>
-                      <textarea id="address-input"></textarea><br>
-                      <h3>Experience/Skills</h3>
-                      <label for="experience-input">Experience:</label>
-                      <textarea id="experience-input"></textarea><br>
-                      <label for="skills-input">Skills:</label>
-                      <textarea id="skills-input"></textarea><br>
-                      <h3>Resume Upload</h3>
-                      <input type="file" id="resume-file-input"><br>
-                      <h3>Profile Picture</h3>
-                      <img id="profile-image-input-preview" src="">
-                      <input type="file" id="profile-image-file-input"><br>
-                      <h3>Social Media Links</h3>
-                      <label for="linkedin-input">LinkedIn:</label>
-                      <input type="text" id="linkedin-input"><br>
-                      <label for="twitter-input">Twitter:</label>
-                      <input type="text" id="twitter-input"><br>
-                      <label for="facebook-input">Facebook:</label>
-                      <input type="text" id="facebook-input"><br>
-                      <button type="submit">Save Changes</button>
-                      <button type="button" id="cancel-edit">Cancel</button>
-                    </form>
-                  </div>
-                                    
-            </div> 
+              <div id="user-profile">
+                <!-- displaying user profile-->
+                <h2>Job-Seeker User Profile</h2>
+                <!-- job details of user-->
+                <div id="profile-details">
+                  <h3>Job Details</h3>
+                  <p>Job Title: <span id="job-title"></span>
+                  </p>
+                  <p>Job Description: <span id="job-description"></span>
+                  </p>
+                </div>
+                <!--personal details of user-->
+                <div id="personal-details">
+                  <h3>Personal Details</h3>
+                  <p>Name: <span id="name"></span>
+                  </p>
+                  <p>Email: <span id="email"></span>
+                  </p>
+                  <p>Phone: <span id="phone"></span>
+                  </p>
+                  <p>Address: <span id="address"></span>
+                  </p>
+                </div>
+                <!--displaying experience datails-->
+                <div id="experience-skills">
+                  <h3>Experience/Skills</h3>
+                  <p>Experience: <span id="experience"></span>
+                  </p>
+                  <p>Skills: <span id="skills"></span>
+                  </p>
+                </div>
+                <!-- uploading resume file-->
+                <div id="resume-upload">
+                  <h3>Resume Upload</h3>
+                  <input type="file" id="resume-file">
+                </div>
+                <!--uploading profile picture-->
+                <div id="profile-picture">
+                  <h3>Profile Picture</h3>
+                  <img id="profile-image" src="">
+                  <input type="file" id="profile-image-file">
+                </div>
+                <!--showing social-media info of user-->
+                <div id="social-media">
+                  <h3>Social Media Links</h3>
+                  <p>LinkedIn: <span id="linkedin"></span>
+                  </p>
+                  <p>Twitter: <span id="twitter"></span>
+                  </p>
+                  <p>Facebook: <span id="facebook"></span>
+                  </p>
+                </div>
+                <!-- button which  display form for editing user info  when clicked -->
+                <button id="edit-profile">Edit Profile</button>
+              </div>
+              <!--form that lets user enter new info  in oder to edits the saved user profile -->
+              <div id="edit-profile-form" style="display: none;">
+                <h2>Edit Profile</h2>
+                <form id="edit-form">
+                  <h3>Job Details</h3>
+                  <label for="job-title-input">Job Title:</label>
+                  <input type="text" id="job-title-input">
+                  <br>
+                  <label for="job-description-input">Job Description:</label>
+                  <textarea id="job-description-input"></textarea>
+                  <br>
+                  <h3>Personal Details</h3>
+                  <label for="name-input">Name:</label>
+                  <input type="text" id="name-input">
+                  <br>
+                  <label for="email-input">Email:</label>
+                  <input type="email" id="email-input">
+                  <br>
+                  <label for="phone-input">Phone:</label>
+                  <input type="tel" id="phone-input">
+                  <br>
+                  <label for="address-input">Address:</label>
+                  <textarea id="address-input"></textarea>
+                  <br>
+                  <h3>Experience/Skills</h3>
+                  <label for="experience-input">Experience:</label>
+                  <textarea id="experience-input"></textarea>
+                  <br>
+                  <label for="skills-input">Skills:</label>
+                  <textarea id="skills-input"></textarea>
+                  <br>
+                  <h3>Resume Upload</h3>
+                  <input type="file" id="resume-file-input">
+                  <br>
+                  <h3>Profile Picture</h3>
+                  <img id="profile-image-input-preview" src="">
+                  <input type="file" id="profile-image-file-input">
+                  <br>
+                  <h3>Social Media Links</h3>
+                  <label for="linkedin-input">LinkedIn:</label>
+                  <input type="text" id="linkedin-input">
+                  <br>
+                  <label for="twitter-input">Twitter:</label>
+                  <input type="text" id="twitter-input">
+                  <br>
+                  <label for="facebook-input">Facebook:</label>
+                  <input type="text" id="facebook-input">
+                  <br>
+                  <button type="submit">Save Changes</button>
+                  <button type="button" id="cancel-edit">Cancel</button>
+                </form>
+              </div>
+            </div>
           </div>
           <!-- Applications -->
           <div class="dashboard-tab">
@@ -120,164 +156,134 @@
             <div class="form1">
               <div class="form1">
                 <div class="applicant-form">
-                <button class="new-application-button">New Application</button>
-                <form class="application-form" style="display: visible;">
-                <h2>PERSONAL INFORMATION</h2>
-                <label for="first-name">Full Name:</label>
-                <input type="text" id="first-name" name="first-name" required><br>
+                  <button class="new-application-button">New Application</button>
+                  <form id="application-form" style="display: visible;">
+                    <h2>PERSONAL INFORMATION</h2>
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first_name" name="first-name" required>
+                    <br>
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last_name" name="last-name" required>
+                    <br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" required></textarea>
+                    <h2>EDUCATION</h2>
+                    <label for="school-name">School Name:</label>
+                    <input type="text" id="school-name" name="school-name" required>
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location" required>
+                    <label for="years">Years Attended:</label>
+                    <input type="number" id="years" name="years" required>
+                    <label for="degree">Degree Received:</label>
+                    <input type="text" id="degree" name="degree" required>
+                    <label for="major">Major:</label>
+                    <input type="text" id="major" name="mojor" required>
+                    <h2>JOB INFORMATION</h2>
+                    <label for="job_title">Job Title:</label>
+                    <input type="text" id="job_title" name="job-title" required>
+                    <label for="department">Department:</label>
+                    <input type="text" id="department" name="department" required>
+                    <label for="job-description">Job Description:</label>
+                    <textarea id="job-description" name="job-description" required></textarea>
+                    <label for="job_experience">Experience:</label>
+                    <textarea id="job_experience" name="job-experience" required></textarea>
+                    <br>
 
-                <label for="last-name">Last Name:</label>
-                <input type="text" id="last-name" name="last-name" required><br>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" required>
-
-                <label for="address">Address:</label>
-                <textarea id="address" name="address" required></textarea>
-
-
-                
-                <h2>EDUCATION</h2>
-                <label for="school-name">School Name:</label>
-                <input type="text" id="school-name" name="school-name" required>
-                
-                <label for="location">Location:</label>
-                <input type="text" id="location" name="location" required>
-                
-                <label for="years">Years Attended:</label>
-                <input type="number" id="years" name="years" required>
-
-                <label for="degree">Degree Received:</label>
-                <input type="text" id="degree" name="degree" required>
-
-                <label for="major">Major:</label>
-                <input type="text" id="major" name="mojor" required>
-                
-                <h2>JOB INFORMATION</h2>
-                <label for="job-title">Job Title:</label>
-                <input type="text" id="job-title" name="job-title" required>
-                
-                <label for="department">Department:</label>
-                <input type="text" id="employer" name="employer" required>
-                
-                <label for="job-description">Job Description:</label>
-                <textarea id="job-description" name="job-description" required></textarea>
-
-                <label for="job-experience">Experience:</label>
-                <textarea id="job-experience" name="job-experience" required></textarea>
-                  <br>
-                <label for="job-type">Job type:</label>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                  <label class="custom-control-label" for="customRadio1">Free-lance</label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                  <label class="custom-control-label" for="customRadio2">Full-time</label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                  <label class="custom-control-label" for="customRadio1">Internship</label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                  <label class="custom-control-label" for="customRadio2">Part-time</label>
-                </div>
-                
-                <h2>REFERENCE</h2>
-                <label for="reference-name">Name:</label>
-                <input type="text" id="reference-name" name="reference-name" required>
-
-                <label for="reference-name">Title :</label>
-                <input type="text" id="reference-name" name="reference-name" required>
-
-                <label for="reference-company"> Company Name:</label>
-                <input type="text" id="reference-company-name" name="reference-company-name" required><br>
-
-                <label for="reference-phone">Phone:</label>
-                <input type="text" id="reference-phone" name="reference-phone" required>
-              <h2>RESIDENCE</h2>
-              <div >
-                <form>
-                  <div class="form-col">
-                    <div class="form-group col-md-6">
-                      <label for="inputEmail4">Email</label>
-                      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    <div id="job_type">
+                      <label for="job_type">Job type:</label>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio1">Free-lance</label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio2">Full-time</label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio3">Internship</label>
+                     </div>
+                       <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio4">Part-time</label>
+                      </div>
                     </div>
-                    <div class="form-group col-md-6">
-                      <label for="inputPassword4">Password</label>
-                      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputAddress">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                  </div>
-                  <div class="form-group">
-                    <label for="inputAddress2">Address 2</label>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                  </div>
-                  <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label for="inputCity">City</label>
-                      <input type="text" class="form-control" id="inputCity">
-                    </div>
-                    <div class="form-group col-md-4">
-                      <label for="inputState">State</label>
-                      <select id="inputState" class="form-control">
-                        <option selected>continent...</option>
-                        <option>africa</option>
-                        <option>asia</option>
-                        <option>antarctica</option>
-                        <option>europe</option>
-                        <option>australia</option>
-                        <option>north-south america</option>
-                      </select>
-                    </div>
-                    <div class="form-group col-md-2">
-                      <label for="inputZip">Zip</label>
-                      <input type="text" class="form-control" id="inputZip">
-                    </div>
-                  </div>
-                  <div class="form-group">
+                    <h2>REFERENCE</h2>
+                    <label for="reference-name">Name:</label>
+                    <input type="text" id="reference-name" name="reference-name" required>
+                    <label for="reference-title">Title :</label>
+                    <input type="text" id="reference-title" name="reference-title" required>
+                    <label for="reference-company"> Company Name:</label>
+                    <input type="text" id="reference-company-name" name="reference-company-name" required>
+                    <br>
+                    <label for="reference-phone">Phone:</label>
+                    <input type="text" id="reference-phone" name="reference-phone" required>
+                    <h2>RESIDENCE</h2>
                     
-                  </div>
-                </form>
-               </div><br><br>
-                <div>
-                  <h2> Acknowledge and Authorization</h2>
-                  <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                    <label class="custom-control-label" for="customCheck1">I certify that all the answers given are true 
-                      complete to the best to my knowledge
-                    </label><br>
-                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                    <label class="custom-control-label" for="customCheck1">I authorize investigation of all statements
-                       contained in this application-for-Employment as may be necessary in arriving at an Employer decision
-                    </label><br>
-                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                    <label class="custom-control-label" for="customCheck1">In the event of employment , i understand  that false  or misleading
-                       Information given in my application or interview may result in discharge
-                    </label>
-                  </div>
+                      
+                        <div class="form-group">
+                          <label for="inputAddress">Address</label>
+                          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+                        <div class="form-group">
+                          <label for="inputAddress2">Address 2</label>
+                          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputCity">City</label>
+                            <input type="text" class="form-control" id="inputCity">
+                          </div>
+                          <div class="form-group col-md-4">
+                            <label for="inputContinent">State</label>
+                            <select id="inputContinent" class="form-control">
+                              <option selected>continent...</option>
+                              <option>africa</option>
+                              <option>asia</option>
+                              <option>antarctica</option>
+                              <option>europe</option>
+                              <option>australia</option>
+                              <option>north-south america</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-md-2">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control" id="inputZip">
+                          </div>
+                        </div>
+                        <div class="form-group"></div>
+                      
+
+                    <div>
+                      <h2> Acknowledge and Authorization</h2>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                        <label class="custom-control-label" for="customCheck1">I certify that all the answers given are true complete to the best to my knowledge </label>
+                        <br>
+                        <input type="checkbox" class="custom-control-input" id="customCheck2">
+                        <label class="custom-control-label" for="customCheck2">I authorize investigation of all statements contained in this application-for-Employment as may be necessary in arriving at an Employer decision </label>
+                        <br>
+                        <input type="checkbox" class="custom-control-input" id="customCheck3">
+                        <label class="custom-control-label" for="customCheck3">In the event of employment , i understand that false or misleading Information given in my application or interview may result in discharge </label>
+                      </div>
+                    </div>
+                    <br>
+                    <br>
+                    <button type="submit">Submit</button>
+                  </form>
                 </div>
-                
-              </form>
-                </div>
-                
-                </div>                 
+              </div>
             </div>
           </div>
           <!-- status -->
           <div class="dashboard-tab">
             <!-- status details  form -->
-             <div class="form1">
+            <div class="form1">
               <div>
-
-              
                 <div id="dashboard">
                   <table id="jobs-table">
                     <thead>
@@ -294,8 +300,6 @@
                     </tbody>
                   </table>
                 </div>
-                
-                
               </div>
             </div>
           </div>
@@ -303,44 +307,41 @@
           <div class="dashboard-tab">
             <!-- post Form  details-->
             <div class="form1">
-                <div>
-                  <body>
-                    <h1>Posted Jobs</h1>
-                    <table id="job-posts">
-                      <thead>
-                        <tr>
-                          <th>Job Title</th>
-                          <th>Department</th>
-                          <th>Position</th>
-                          <th>Job Description</th>
-                          <th>Job Type</th>
-                          <th>Date Posted</th>
-                          <th>Company Name</th>
-                          <th>Contact Info</th>
-                          <th>Location</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <!-- Job post information will be displayed here -->
-                      </tbody>
-                    </table>
-                  
-                    <!-- Firebase configuration script -->
-                    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
-                    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js"></script>
-                    <script>
-                      // Firebase configuration object goes here
-                    </script>
-                  
-                    <!-- JavaScript file -->
-                    <script src="jobSeeker.js"></script>
-                  </body>
-                </div>
+              <div>
+                <body>
+                  <h1>Posted Jobs</h1>
+                  <table id="job-posts">
+                    <thead>
+                      <tr>
+                        <th>Job Title</th>
+                        <th>Department</th>
+                        <th>Position</th>
+                        <th>Job Description</th>
+                        <th>Job Type</th>
+                        <th>Date Posted</th>
+                        <th>Company Name</th>
+                        <th>Contact Info</th>
+                        <th>Location</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Job post information will be displayed here -->
+                    </tbody>
+                  </table>
+                  <!-- Firebase configuration script -->
+                  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
+                  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js"></script>
+                  <script>
+                    // Firebase configuration object goes here
+                  </script>
+                  <!-- JavaScript file -->
+                  <script src="jobSeeker.js"></script>
+                </body>
+              </div>
             </div>
-
           </div>
         </div>
       </div>
- </div>
-</body>
+    </div>
+  </body>
 </html>

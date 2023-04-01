@@ -109,6 +109,167 @@ document.getElementById('user-profile').style.display = 'block';
 }); 
 
 
+
+
+
+
+// Initialize Firebase
+var firebaseConfig = {
+  //  Firebase project configuration
+  apiKey: "AIzaSyCaMBLooSI9RN_pjcuwM9nFANlyGfEk1wQ",
+
+  authDomain: "job-search-portal-4ebc8.firebaseapp.com",
+
+  databaseURL: "https://job-search-portal-4ebc8-default-rtdb.firebaseio.com",
+
+  projectId: "job-search-portal-4ebc8",
+
+  storageBucket: "job-search-portal-4ebc8.appspot.com",
+
+  messagingSenderId: "58044242489",
+
+  appId: "1:58044242489:web:144bc8be6fa847160d8be8",
+
+  measurementId: "G-06KHXF5DGD"
+
+};
+firebase.initializeApp(firebaseConfig);
+
+// Get a reference to the Firebase Realtime Database
+var database = firebase.database();
+
+// Get a reference to the application data node in the database
+var applicationRef = database.ref("application");
+
+// Get a reference to the application form
+var applicationForm = document.getElementById("application-form");
+
+// Listen for form submissions
+applicationForm.addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent the form from submitting normally
+
+  // Get the values from the form fields
+  var name = document.getElementById("first-name").value;
+  var email = document.getElementById("last-name").value;
+  var phone = document.getElementById("email").value;
+  var phone = document.getElementById("phone").value;
+  var phone = document.getElementById("job-title").value;
+  var phone = document.getElementById("department").value;
+  var phone = document.getElementById("job-experience").value;
+  var phone = document.getElementById("job-type").value;
+
+  // creating new application object with the form data
+  var application = {
+    first_name:first_name,
+    last_name:last_name,
+    email:email,
+    phone:phone,
+    job_title:job-title,
+    department:department,
+    job_experience:job_experience,
+    job_type:job_type
+  };
+
+  // Save the application object to the database
+  applicationRef.set(application);
+
+  // Clear the form fields
+  document.getElementById("first-name").value="";
+  document.getElementById("last-name").value="";
+  document.getElementById("email").value="";
+  document.getElementById("phone").value="";
+  document.getElementById("job-title").value="";
+  document.getElementById("department").value="";
+  document.getElementById("job-experience").value="";
+  document.getElementById("job-type").value="";
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
 // initialize Firebase app
 var firebaseConfig = {
   // insert your Firebase config here
@@ -140,7 +301,9 @@ jobsRef.onSnapshot(function(snapshot) {
     tbody.appendChild(row);
   });
 });
+*/
 
+/*
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
@@ -171,3 +334,4 @@ db.collection('job-posts').get().then(snapshot => {
 		tableBody.appendChild(row);
 	});
 });
+*/

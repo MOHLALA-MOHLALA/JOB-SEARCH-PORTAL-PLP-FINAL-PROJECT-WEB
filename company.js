@@ -18,6 +18,83 @@ tabs.forEach((tab, index) => {
   });
 });
 
+const firebaseConfig = {
+
+  apiKey: "AIzaSyCaMBLooSI9RN_pjcuwM9nFANlyGfEk1wQ",
+
+  authDomain: "job-search-portal-4ebc8.firebaseapp.com",
+
+  databaseURL: "https://job-search-portal-4ebc8-default-rtdb.firebaseio.com",
+
+  projectId: "job-search-portal-4ebc8",
+
+  storageBucket: "job-search-portal-4ebc8.appspot.com",
+
+  messagingSenderId: "58044242489",
+
+  appId: "1:58044242489:web:144bc8be6fa847160d8be8",
+
+  measurementId: "G-06KHXF5DGD"
+
+};
+
+
+// Initialize Firebase
+
+const app = initializeApp(firebaseConfig);
+
+const analytics = getAnalytics(app);
+
+
+
+function storeTask(event) {
+  event.preventDefault();
+
+  var task = document.getElementById("task").value;
+  var desc = document.getElementById("desc").value;
+  document.getElementById("task").value = "";
+  document.getElementById("desc").value = "";
+
+  
+  // get reference to jobs collection in Firebase
+var jobsRef = firebase.firestore().collection("jobs");
+
+// listen for real-time updates to jobs data
+jobsRef.onSnapshot(function(snapshot) {
+  // clear existing table rows
+  var tbody = document.querySelector("#jobs-table tbody");
+  tbody.innerHTML = "";
+  
+  // iterate over job data and add rows to table
+  snapshot.forEach(function(doc) {
+    var job = doc.data();
+    
+    var row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${job.title}</td>
+      <td>${job.department}</td>
+      <td>${job.type}</td>
+      <td>${job.dateApplied.toDate().toLocaleDateString()}</td>
+      <td>${job.status}</td>
+    `;
+    
+    tbody.appendChild(row);
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 // Firebase configuration
 
 
@@ -97,13 +174,22 @@ db.collection('applicants').get()
 
 // Initialize Firebase
 var config = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  databaseURL: "YOUR_DATABASE_URL",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyCaMBLooSI9RN_pjcuwM9nFANlyGfEk1wQ",
+
+  authDomain: "job-search-portal-4ebc8.firebaseapp.com",
+
+  databaseURL: "https://job-search-portal-4ebc8-default-rtdb.firebaseio.com",
+
+  projectId: "job-search-portal-4ebc8",
+
+  storageBucket: "job-search-portal-4ebc8.appspot.com",
+
+  messagingSenderId: "58044242489",
+
+  appId: "1:58044242489:web:999782036b64d2220d8be8",
+
+  measurementId: "G-WGDGSDEQS4"
+
 };
 firebase.initializeApp(config);
 
@@ -133,12 +219,22 @@ database.ref("job-applications").on("value", function(snapshot) {
 
 // Initialize Firebase
 var firebaseConfig = {
-  apiKey: "",
-  authDomain: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: "",
+  apiKey: "AIzaSyCaMBLooSI9RN_pjcuwM9nFANlyGfEk1wQ",
+
+  authDomain: "job-search-portal-4ebc8.firebaseapp.com",
+
+  databaseURL: "https://job-search-portal-4ebc8-default-rtdb.firebaseio.com",
+
+  projectId: "job-search-portal-4ebc8",
+
+  storageBucket: "job-search-portal-4ebc8.appspot.com",
+
+  messagingSenderId: "58044242489",
+
+  appId: "1:58044242489:web:999782036b64d2220d8be8",
+
+  measurementId: "G-WGDGSDEQS4"
+
 };
 firebase.initializeApp(firebaseConfig);
 
@@ -219,3 +315,4 @@ document.getElementById('company-form').addEventListener('submit', function(even
   saveData();
   alert('Company data saved!');
 });
+*/
