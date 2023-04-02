@@ -114,17 +114,8 @@ const newApplicationButton = document.getElementById("new-application-button");
 const application_form = document.getElementById("application-form");
 
 newApplicationButton.addEventListener("click", () => {
-  application_Form.style.display = "block";
+  application_form.style.display = "block";
 });
-
-
-
-
-
-
-
-
-
 // Initialize Firebase
 var firebaseConfig = {
   //  Firebase project configuration
@@ -247,7 +238,7 @@ jobsRef.onSnapshot(function(snapshot) {
   });
 });
 
-/*
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 // Get a reference to the Firestore database
@@ -273,4 +264,3 @@ db.collection('job-posts').get().then(snapshot => {
 		tableBody.appendChild(row);
 	});
 });
-*/

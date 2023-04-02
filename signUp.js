@@ -134,3 +134,13 @@ returnBtn.addEventListener("click", function () {
   createacct.style.display = "none";
 });
 
+
+
+//nav bar
+
+var navbarToggler = document.querySelector('.navbar-toggler');
+var offcanvasCollapse = document.querySelector('.offcanvas-collapse');
+
+navbarToggler.addEventListener('click', function() {
+  offcanvasCollapse.classList.toggle('show');
+});

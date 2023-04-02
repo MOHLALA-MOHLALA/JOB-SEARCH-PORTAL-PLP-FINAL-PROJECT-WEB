@@ -1,3 +1,83 @@
+.navbar {
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.navbar-brand {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-right: 2rem;
+}
+
+.navbar-toggler {
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+
+.navbar-toggler-icon {
+  background-color: #fff;
+  display: inline-block;
+  height: 1.5rem;
+  position: relative;
+  width: 1.5rem;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  background-color: #fff;
+  content: '';
+  height: 2px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.navbar-toggler-icon::before {
+  transform: translateY(-6px);
+}
+
+.navbar-toggler-icon::after {
+  transform: translateY(6px);
+}
+
+.navbar-nav {
+  margin-top: 1rem;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 1rem;
+}
+
+.navbar-nav .nav-link {
+  color: #fff;
+}
+
+.offcanvas-collapse {
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  z-index: 998;
+  transition: right 0.3s ease-in-out;
+}
+
+.offcanvas-collapse.show {
+  right: 0;
+}
+
+/* signup and in */
+
 h1 {
     margin-bottom: 8%;
     text-align: center;
