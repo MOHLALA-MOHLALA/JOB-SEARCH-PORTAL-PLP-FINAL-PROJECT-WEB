@@ -60,11 +60,98 @@ applicationRef.on("value", function(snapshot) {
 });
 
 
+firebase.initializeApp(firebaseConfig);
+
+const db = firebase.firestore();
+
+// Get candidate data from Firestore and display it in the table
+db.collection("candidates").get().then((querySnapshot) => {
+  querySnapshot.forEach((doc) => {
+      const candidate = doc.data();
+      const row = document.createElement('tr');
+      const firstName = document.createElement('td');
+      const lastName = document.createElement('td');
+      const email = document.createElement('td');
+      const phone = document.createElement('td');
+      const jobTitle = document.createElement('td');
+      const jobDepartment = document.createElement('td');
+      const experience = document.createElement('td');
+      firstName.innerText = candidate.firstName;
+      lastName.innerText = candidate.lastName;
+      email.innerText = candidate.email;
+      phone.innerText = candidate.phone;
+      jobTitle.innerText = candidate.jobTitle;
+      jobDepartment.innerText = candidate.jobDepartment;
+      experience.innerText = candidate.experience;
+      row.appendChild(firstName);
+      row.appendChild(lastName);
+      row.appendChild(email);
+      row.appendChild(phone);
+      row.appendChild(jobTitle);
+      row.appendChild(jobDepartment);
+      row.appendChild(experience);
+      document.getElementById('candidate-list').appendChild(row);
+  });
+});
 
 
 
 
 
+//posting
+
+
+// Initialize Firebase
+
+
+firebase.initializeApp(firebaseConfig);
+const database = firebase.firestore();
+
+// Get the job form element and hide it initially
+const jobForm = document.getElementById("job-form");
+const jobFormContainer = document.getElementById("job-form-container");
+jobFormContainer.classList.add("hidden");
+
+// Show the job form when the button is clicked
+const postJobBtn = document.getElementById("post-job-btn");
+postJobBtn.addEventListener("click", () => {
+	jobFormContainer.classList.remove("hidden");
+});
+
+// Handle form submission
+jobForm.addEventListener("submit", (e) => {
+	e.preventDefault();
+	// Get form data
+	const companyName = jobForm.companyName.value;
+	const jobTitle = jobForm.jobTitle.value;
+	const position = jobForm.position.value;
+	const department = jobForm.department.value;
+	const experience = jobForm.experience.value;
+	const skills = jobForm.skills.value;
+	const jobType = jobForm.jobType.value;
+	const location = jobForm.location.value;
+	const contactInfo = jobForm.contactInfo.value;
+
+	// Store data in Firestore database
+	db.collection("jobs").add({
+		companyName: companyName,
+		jobTitle: jobTitle,
+		position: position,
+		department: department,
+		experience: experience,
+		skills: skills,
+		jobType: jobType,
+		location: location,
+		contactInfo: contactInfo
+	})
+	.then(() => {
+		alert("Job posted successfully!");
+		jobForm.reset();
+	})
+	.catch((error) => {
+		alert("Error posting job: " + error.message);
+	});
+});
 
 
 

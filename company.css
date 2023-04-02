@@ -76,7 +76,7 @@
   }
   
   thead th {
-    background-color: #000;
+    background-color: #949292;
     color: #fff;
     padding: 10px;
     text-align: left;
@@ -155,7 +155,7 @@ textarea {
 button[type="submit"],
 button[type="button"] {
   display: inline-block;
-  background-color: #4CAF50;
+  background-color: #3b4643;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -166,7 +166,7 @@ button[type="button"] {
 
 button[type="submit"]:hover,
 button[type="button"]:hover {
-  background-color: #3e8e41;
+  background-color: #353d3d;
 }
 
 #error-message {
@@ -227,3 +227,82 @@ th {
 tr:nth-child(even) {
   background-color: #4b4545;
 }
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	text-align: left;
+	padding: 8px;
+}
+
+th {
+	background-color: #748394;
+	color: white;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 50px;
+}
+
+
+
+
+
+/*posting*/
+
+.hidden {
+	display: none;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 50px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+label {
+	margin-top: 10px;
+}
+
+input[type="text"], textarea {
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	font-size: 16px;
+}
+
+select {
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	font-size: 16px;
+	background-color: #fff;
+}
+
+input[type="submit"] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px;
+	border: none;
+	border-radius: 4px;
+	margin-top: 10px;
+	font-size: 16px;
+	cursor: pointer;

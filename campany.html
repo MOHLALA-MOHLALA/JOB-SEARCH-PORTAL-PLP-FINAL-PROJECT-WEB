@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=
 					<device-width>, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-company.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js"></script>
     <link rel="stylesheet" href="./company.css">
     <script src="./company.js" defer></script>
   </head>
@@ -178,14 +180,57 @@
             <div class="dashboard-tab">
               <!-- POST A JOB Cards -->
               <div class="form1">
-                <h2> POST TESTING</h2>
+                <body>
+                  <h1>Post a Job</h1>
+                  <button id="post-job-btn">Post a Job</button>
+                  <div id="job-form-container" class="hidden">
+                    <form id="job-form">
+                      <label for="company-name">Company Name:</label>
+                      <input type="text" id="company-name" name="companyName" required>
+                
+                      <label for="job-title">Job Title:</label>
+                      <input type="text" id="job-title" name="jobTitle" required>
+                
+                      <label for="position">Position:</label>
+                      <input type="text" id="position" name="position" required>
+                
+                      <label for="department">Department:</label>
+                      <input type="text" id="department" name="department" required>
+                
+                      <label for="experience">Experience:</label>
+                      <input type="text" id="experience" name="experience" required>
+                
+                      <label for="skills">Skills:</label>
+                      <input type="text" id="skills" name="skills" required>
+                
+                      <label for="job-type">Job Type:</label>
+                      <select id="job-type" name="jobType">
+                        <option value="full-time">Full-time</option>
+                        <option value="part-time">Part-time</option>
+                        <option value="contract">Contract</option>
+                        <option value="internship">Internship</option>
+                      </select>
+                
+                      <label for="location">Location:</label>
+                      <input type="text" id="location" name="location" required>
+                
+                      <label for="contact-info">Contact Info:</label>
+                      <textarea id="contact-info" name="contactInfo" required></textarea>
+                
+                      <input type="submit" value="Submit">
+                    </form>
+                  </div>
+                
+                  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
+                  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js"></script>
+                  <script src="jobSeeker.js"></script>
+                </body>
               </div>
             </div>
             <!-- APPLICATIONS -->
             <div class="dashboard-tab">
               <!-- APPLICATIONS FORM POST SIDE -->
               <div class="form1">
-
                     <div id="application-data-dashboard">
                       <table id="application-data">
                         <thead>
@@ -209,10 +254,33 @@
                   
                 
               </div>
+            </div>
               <div class="dashboard-tab">
                 <!-- candidates -->
                 <div class="form1">
-                  <h2>candidates testing</h2>
+                  <div>
+    
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Email</th>
+                          <th>Phone</th>
+                          <th>Job Title</th>
+                          <th>Job Department</th>
+                          <th>Experience</th>
+                        </tr>
+                      </thead>
+                      <tbody id="candidate-list">
+                      </tbody>
+                    </table>
+                  
+                    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
+                    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js"></script>
+                    <script src="company.js"></script>
+                  </div>
+
                 </div>
               </div>
             </div>

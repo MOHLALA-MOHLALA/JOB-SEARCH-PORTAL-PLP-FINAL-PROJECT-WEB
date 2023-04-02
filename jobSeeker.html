@@ -7,9 +7,11 @@ gdsiugvou<!DOCTYPE html>
 					<device-width>, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./jobSeeker.css">
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-jobSeeker.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-jobSeeker.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js"></script>
     <script src="./jobSeeker.js" defer></script>
   </head>
   <body>
@@ -156,8 +158,9 @@ gdsiugvou<!DOCTYPE html>
             <div class="form1">
               <div class="form1">
                 <div class="applicant-form">
-                  <button class="new-application-button">New Application</button>
-                  <form id="application-form" style="display: visible;">
+                  <button  action ="" class="new-application-button">New Application</button>
+
+                  <form   id="application-form" style="display: none;">
                     <h2>PERSONAL INFORMATION</h2>
                     <label for="first-name">First Name:</label>
                     <input type="text" id="first_name" name="first-name" required>

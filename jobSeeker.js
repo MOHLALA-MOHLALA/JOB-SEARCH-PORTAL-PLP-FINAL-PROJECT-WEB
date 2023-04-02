@@ -19,20 +19,20 @@ tabContents[index].classList.add('active');
 });
 
 // Populate user profile data
-document.getElementById('job-title').innerHTML = 'Software Engineer';
-document.getElementById('job-description').innerHTML = 'IT professional who designs, develops and maintains computer software ';
+document.getElementById('job-title').innerHTML = '';
+document.getElementById('job-description').innerHTML = '';
 
-document.getElementById('name').innerHTML = 'TSHEGOFATSO MOHLALA';
-document.getElementById('email').innerHTML = 'tm.senokane@gmail.com';
-document.getElementById('phone').innerHTML = '+27 64 917 5087';
-document.getElementById('address').innerHTML = '123 Main St, SOUTH AFRICA EARTH';
+document.getElementById('name').innerHTML = '';
+document.getElementById('email').innerHTML = '';
+document.getElementById('phone').innerHTML = '';
+document.getElementById('address').innerHTML = '';
 
-document.getElementById('experience').innerHTML = '2 years of experience in software engineering';
-document.getElementById('skills').innerHTML = 'JavaScript, HTML, CSS, Node.js, Python , Django , my SQL';
+document.getElementById('experience').innerHTML = '';
+document.getElementById('skills').innerHTML = '';
 
-document.getElementById('linkedin').innerHTML = 'https://www.linkedin.com/in/mohlala-mohlala/';
-document.getElementById('twitter').innerHTML = 'https://twitter.com/tmohlalamohlala';
-document.getElementById('facebook').innerHTML = 'https://www.facebook.com/tshego mohlala';
+document.getElementById('linkedin').innerHTML = '';
+document.getElementById('twitter').innerHTML = '';
+document.getElementById('facebook').innerHTML = '';
 
 // Edit Profile button event listener
 document.getElementById('edit-profile').addEventListener('click', function() {
@@ -106,6 +106,19 @@ document.getElementById('edit-profile-form').style.display = 'none';
 document.getElementById('user-profile').style.display = 'block';
 });
 }); 
+
+
+//hiding and showing application from with aclick of a button
+
+const newApplicationButton = document.getElementById("new-application-button");
+const application_form = document.getElementById("application-form");
+
+newApplicationButton.addEventListener("click", () => {
+  application_Form.style.display = "block";
+});
+
+
+
 
 
 
@@ -186,91 +199,27 @@ applicationForm.addEventListener("submit", function(event) {
 
 
 
+/*application status js */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
 // initialize Firebase app
 var firebaseConfig = {
-  // insert your Firebase config here
+  //  Firebase config 
+  apiKey: "AIzaSyCaMBLooSI9RN_pjcuwM9nFANlyGfEk1wQ",
+
+  authDomain: "job-search-portal-4ebc8.firebaseapp.com",
+
+  databaseURL: "https://job-search-portal-4ebc8-default-rtdb.firebaseio.com",
+
+  projectId: "job-search-portal-4ebc8",
+
+  storageBucket: "job-search-portal-4ebc8.appspot.com",
+
+  messagingSenderId: "58044242489",
+
+  appId: "1:58044242489:web:144bc8be6fa847160d8be8",
+
+  measurementId: "G-06KHXF5DGD"
+
 };
 firebase.initializeApp(firebaseConfig);
 // get reference to jobs collection in Firebase
@@ -297,7 +246,6 @@ jobsRef.onSnapshot(function(snapshot) {
     tbody.appendChild(row);
   });
 });
-*/
 
 /*
 // Initialize Firebase
