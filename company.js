@@ -96,46 +96,27 @@ applicationRef.on("value", function(snapshot) {
 
 /*
 const firebaseConfig = {
-
   apiKey: "AIzaSyCaMBLooSI9RN_pjcuwM9nFANlyGfEk1wQ",
-
   authDomain: "job-search-portal-4ebc8.firebaseapp.com",
-
   databaseURL: "https://job-search-portal-4ebc8-default-rtdb.firebaseio.com",
-
   projectId: "job-search-portal-4ebc8",
-
   storageBucket: "job-search-portal-4ebc8.appspot.com",
-
   messagingSenderId: "58044242489",
-
   appId: "1:58044242489:web:144bc8be6fa847160d8be8",
-
   measurementId: "G-06KHXF5DGD"
-
 };
-
-
 // Initialize Firebase
-
 const app = initializeApp(firebaseConfig);
-
 const analytics = getAnalytics(app);
-
-
-
 function storeTask(event) {
   event.preventDefault();
-
   var task = document.getElementById("task").value;
   var desc = document.getElementById("desc").value;
   document.getElementById("task").value = "";
   document.getElementById("desc").value = "";
-
   
   // get reference to jobs collection in Firebase
 var jobsRef = firebase.firestore().collection("jobs");
-
 // listen for real-time updates to jobs data
 jobsRef.onSnapshot(function(snapshot) {
   // clear existing table rows
@@ -158,38 +139,20 @@ jobsRef.onSnapshot(function(snapshot) {
     tbody.appendChild(row);
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 // Firebase configuration
-
-
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
-
 // Get elements from the DOM
 const profileDetails = document.getElementById('profile-details');
 const profileForm = document.getElementById('profile-form');
 const newEditBtn = document.getElementById('new-edit-btn');
 const updateBtn = document.getElementById('update-btn');
-
 // Show/hide the profile form on button click
 newEditBtn.addEventListener('click', () => {
   profileForm.style.display = profileForm.style.display === 'none' ? 'block' : 'none';
 });
-
 // Update the company profile on form submit
 updateBtn.addEventListener('click', (e) => {
   e.preventDefault();
@@ -228,7 +191,6 @@ updateBtn.addEventListener('click', (e) => {
       console.error("Error adding applicant: ", error);
     });
 });
-
 // Display existing applicants from Firebase
 db.collection('applicants').get()
   .then((querySnapshot) => {
@@ -246,36 +208,22 @@ db.collection('applicants').get()
   .catch((error) => {
     console.error("Error getting applicants: ", error);
   });
-
-
-
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyCaMBLooSI9RN_pjcuwM9nFANlyGfEk1wQ",
-
   authDomain: "job-search-portal-4ebc8.firebaseapp.com",
-
   databaseURL: "https://job-search-portal-4ebc8-default-rtdb.firebaseio.com",
-
   projectId: "job-search-portal-4ebc8",
-
   storageBucket: "job-search-portal-4ebc8.appspot.com",
-
   messagingSenderId: "58044242489",
-
   appId: "1:58044242489:web:999782036b64d2220d8be8",
-
   measurementId: "G-WGDGSDEQS4"
-
 };
 firebase.initializeApp(config);
-
 // Get a reference to the database service
 var database = firebase.database();
-
 // Get a reference to the table body element
 var tableBody = document.getElementById("table-body");
-
 // Get the job applications data from Firebase
 database.ref("job-applications").on("value", function(snapshot) {
   snapshot.forEach(function(childSnapshot) {
@@ -290,34 +238,20 @@ database.ref("job-applications").on("value", function(snapshot) {
     row.insertCell(6).innerHTML = childData.dateApplied;
   });
 });
-
-
-
-
 // Initialize Firebase
 var firebaseConfig = {
   apiKey: "AIzaSyCaMBLooSI9RN_pjcuwM9nFANlyGfEk1wQ",
-
   authDomain: "job-search-portal-4ebc8.firebaseapp.com",
-
   databaseURL: "https://job-search-portal-4ebc8-default-rtdb.firebaseio.com",
-
   projectId: "job-search-portal-4ebc8",
-
   storageBucket: "job-search-portal-4ebc8.appspot.com",
-
   messagingSenderId: "58044242489",
-
   appId: "1:58044242489:web:999782036b64d2220d8be8",
-
   measurementId: "G-WGDGSDEQS4"
-
 };
 firebase.initializeApp(firebaseConfig);
-
 // Get a reference to the database service
 var database = firebase.database();
-
 // Save data to Firebase
 function saveData() {
   // Get values from input fields
@@ -340,7 +274,6 @@ function saveData() {
   var companyLinkedIn = document.getElementById('linkedin-input').value;
   var companyTwitter = document.getElementById('twitter-input').value;
   var companyFacebook = document.getElementById('facebook-input').value;
-
   // Save data to Firebase database
   database.ref('companies').push({
     name: companyName,
@@ -363,7 +296,6 @@ function saveData() {
     twitter: companyTwitter,
     facebook: companyFacebook
   });
-
   // Clear input fields
   document.getElementById('name').value = '';
   document.getElementById('email').value = '';
@@ -385,7 +317,6 @@ function saveData() {
   document.getElementById('twitter-input').value = '';
   document.getElementById('facebook-input').value = '';
 }
-
 // Event listener for form submission
 document.getElementById('company-form').addEventListener('submit', function(event) {
   event.preventDefault();

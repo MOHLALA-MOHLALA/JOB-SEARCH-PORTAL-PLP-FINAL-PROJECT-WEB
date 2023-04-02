@@ -128,7 +128,7 @@
   }
 
 
-  #dashboard {
+  #application-data-dashboard {
     padding: 20px;
   }
   
@@ -139,14 +139,14 @@
     margin-top: 20px;
   }
   
-  #jobs-table th,
-  #jobs-table td {
+  #application-data th,
+  #application-data td {
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ccc;
   }
   
-  #jobs-table th {
+  #application-data th {
     font-weight: bold;
     background-color: #f5f5f5;
   }
@@ -174,4 +174,82 @@
   tr:nth-child(even) {
     background-color: #f2f2f2;
   }
+
   
+/*application from style */
+
+/* Set the font family and size for the entire form */
+form {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Style the headings */
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Style the labels */
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+/* Style the input fields and textareas */
+input[type=text], input[type=email], input[type=tel], input[type=number], textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Style the radio buttons */
+.custom-control-input {
+  margin-top: 10px;
+}
+
+/* Style the button */
+button {
+  background-color: #202324;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Style the form group */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Style the form row */
+.form-row {
+  margin-top: 20px;
+}
+
+/* Style the form control */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Style the select dropdown */
+select.form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 12px 12px;
+}

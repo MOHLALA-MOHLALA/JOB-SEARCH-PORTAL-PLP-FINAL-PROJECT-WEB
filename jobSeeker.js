@@ -1,4 +1,3 @@
-
 const tabs = document.querySelectorAll('.dashboard ul li');
 const tabContents = document.querySelectorAll('.dashboard-tab');
 
@@ -269,16 +268,13 @@ applicationForm.addEventListener("submit", function(event) {
 
 
 /*
-
 // initialize Firebase app
 var firebaseConfig = {
   // insert your Firebase config here
 };
 firebase.initializeApp(firebaseConfig);
-
 // get reference to jobs collection in Firebase
 var jobsRef = firebase.firestore().collection("jobs");
-
 // listen for real-time updates to jobs data
 jobsRef.onSnapshot(function(snapshot) {
   // clear existing table rows
@@ -306,19 +302,15 @@ jobsRef.onSnapshot(function(snapshot) {
 /*
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-
 // Get a reference to the Firestore database
 const db = firebase.firestore();
-
 // Get a reference to the table body
 const tableBody = document.querySelector('#job-posts tbody');
-
 // Retrieve job posts from Firebase and display them in the table
 db.collection('job-posts').get().then(snapshot => {
 	snapshot.forEach(doc => {
 		const data = doc.data();
 		const row = document.createElement('tr');
-
 		row.innerHTML = `
 			<td>${data.jobTitle}</td>
 			<td>${data.department}</td>
@@ -330,7 +322,6 @@ db.collection('job-posts').get().then(snapshot => {
 			<td>${data.companyContact}</td>
 			<td>${data.location}</td>
 		`;
-
 		tableBody.appendChild(row);
 	});
 });
