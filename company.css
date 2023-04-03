@@ -182,7 +182,7 @@ button[type="button"]:hover {
 /*application data-table*/
 
 #application-data-dashboard {
-  padding: 20px;
+  text-align: center;
 }
 
 #jobs-table {
@@ -194,7 +194,6 @@ button[type="button"]:hover {
 
 #application-data th,
 #application-data td {
-  padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ccc;
 }
@@ -215,7 +214,6 @@ table {
 }
 
 th, td {
-  padding: 10px;
   border: 1px solid #494545;
 }
 
@@ -259,7 +257,7 @@ h1 {
 /*posting*/
 
 .hidden {
-	display: none;
+	display: visible;
 }
 
 h1 {

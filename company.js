@@ -41,11 +41,9 @@ var firebaseConfig = {
   measurementId: "G-06KHXF5DGD"
 
 };
-firebase.initializeApp(firebaseConfig);
 
-// Get a reference to the Firebase Realtime Database
-var db = firebase.database();
 
+var db = firestore.database ();
 // Get a reference to the application data node in the database
 var applicationRef = database.ref("application");
 
@@ -59,10 +57,9 @@ applicationRef.on("value", function(snapshot) {
   applicationDataDiv.innerHTML = JSON.stringify(applicationData);
 });
 
-
 firebase.initializeApp(firebaseConfig);
+const database = firebase.firestore();
 
-const db = firebase.firestore();
 
 // Get candidate data from Firestore and display it in the table
 db.collection("candidates").get().then((querySnapshot) => {
@@ -94,18 +91,8 @@ db.collection("candidates").get().then((querySnapshot) => {
   });
 });
 
-
-
-
-
 //posting
 
-
-// Initialize Firebase
-
-
-firebase.initializeApp(firebaseConfig);
-const database = firebase.firestore();
 
 // Get the job form element and hide it initially
 const jobForm = document.getElementById("job-form");
